@@ -1,0 +1,16 @@
+CREATE DATABASE expensetracker;
+USE expensetracker;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE expenses (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user VARCHAR(50),
+    category VARCHAR(100),
+    amount DECIMAL(10,2),
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
